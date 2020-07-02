@@ -374,8 +374,10 @@ Configuration reference
 
     * ``layers``: dict [optional]
         Contains the layers from this repository that should be added to the
-        ``bblayers.conf``. If this is missing or ``None`` or and empty
-        dictionary, the path to the repo itself is added as a layer.
+        ``bblayers.conf``. If this is missing, the path to the repo itself is
+        added as a layer, if this is present but empty no layer is added from
+        this repo (useful for non layer repos i.e. bitbake when using
+        openembedded-core).
 
       * ``<layer-path>``: enum [optional]
           Adds the layer with ``<layer-path>`` that is relative to the

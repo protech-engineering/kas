@@ -124,23 +124,30 @@ CONFIGSCHEMA = {
                                 'type': 'string',
                             },
                             'layers': {
-                                'type': 'object',
-                                'additionalProperties': {
-                                    'oneOf': [
-                                        {
-                                            'type': 'null',
+                                'oneOf': [
+                                    {
+                                        'type': 'object',
+                                        'additionalProperties': {
+                                            'oneOf': [
+                                                {
+                                                    'type': 'null',
+                                                },
+                                                {
+                                                    'type': 'integer',
+                                                },
+                                                {
+                                                    'type': 'boolean',
+                                                },
+                                                {
+                                                    'type': 'string',
+                                                },
+                                            ],
                                         },
-                                        {
-                                            'type': 'integer',
-                                        },
-                                        {
-                                            'type': 'boolean',
-                                        },
-                                        {
-                                            'type': 'string',
-                                        },
-                                    ],
-                                },
+                                    },
+                                    {
+                                        'type': 'null'
+                                    }
+                                ]
                             },
                             'patches': {
                                 'type': 'object',

@@ -86,7 +86,7 @@ class Repo:
         layers = list(filter(lambda x, laydict=layers_dict:
                              str(laydict[x]).lower() not in
                              ['disabled', 'excluded', 'n', 'no', '0', 'false'],
-                             layers_dict))
+                             layers_dict)) if layers_dict else {}
         patches_dict = repo_config.get('patches', {})
         patches = list(
             {
